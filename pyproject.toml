@@ -8,6 +8,7 @@ authors = ["ske-kr <54828276+ske-kr@users.noreply.github.com>"]
 python = "^3.10"
 Django = "^3.2.9"
 djangorestframework = "^3.12.4"
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 
