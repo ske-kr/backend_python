@@ -28,6 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CORS_ORIGIN_WHITELIST = (
+    "http://ec2-3-34-126-238.ap-northeast-2.compute.amazonaws.com:8000"
+    "https://example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:3000"
+)
 
 # Application definition
 
@@ -40,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todos.apps.TodosConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
