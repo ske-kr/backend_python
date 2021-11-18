@@ -28,12 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ORIGIN_WHITELIST = (
-    "http://ec2-3-34-126-238.ap-northeast-2.compute.amazonaws.com:8000",
-    "https://example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:3000"
+CORS_ALLOWED_ORIGINS = (
+   "http://ec2-3-34-126-238.ap-northeast-2.compute.amazonaws.com:8000",
+   "https://example.com",
+   "http://localhost:8080",
+   "http://localhost:3000"
 )
+#CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
