@@ -7,6 +7,7 @@ services:
     volumes:
       - .:/code
       - ./config/nginx:/etc/nginx/conf.d
+      - ./static:/staticfiles
     depends_on:
       - web
 
@@ -16,6 +17,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/code
+      - ./staticfile:/static
     ports:
       - "8000:8000"
       - "8009:8009"
