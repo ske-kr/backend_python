@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  postgres_db_dev: {}
 services:
   nginx:
     image: nginx:latest
@@ -21,5 +23,16 @@ services:
     ports:
       - "8000:8000"
       - "8009:8009"
-    env_file:
-      - .env
+    environment:
+      - DB_HOST=db
+
+  db:
+    image: postgres
+    # postgres_db_dev를 컨테이너 ~/data에 마운트
+    volumes:
+      - postgres_db_dev:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234

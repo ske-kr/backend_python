@@ -13,4 +13,4 @@ RUN poetry shell
 ADD . /code
 RUN ["chmod", "+x", "start.sh"] # bash script 권한 설정
 #RUN ["sh","./seed_deploy_test.sh"]
-ENTRYPOINT ["sh","./start.sh"] # bash script 실행
+#ENTRYPOINT ["sh","./start.sh"] # bash script 실행

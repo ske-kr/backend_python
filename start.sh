@@ -1,6 +1,7 @@
 #!/bin/sh
+poetry install
+poetry shell
 cd meronia
-ls
 yes | python manage.py makemigrations --settings=meronia.settings
 echo "==> Django setup, executing: migrate pro"
 python manage.py migrate --settings=meronia.settings --fake-initial
